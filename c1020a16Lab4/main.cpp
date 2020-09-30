@@ -33,6 +33,7 @@ int main(){
     char c;
 	Participant temp;
 	Activity a;
+    cout << " Hello " << endl;
 	inFile.open("tracking.bin", ios::binary); // open the file named "tracking.bin" in binary mode
     if (inFile.fail()){ // if the file can't open because there are no file 
         cout << "---THE BINARY INPUT FILE DOES NOT EXIST. CREATING AN EMPTY TREE--- " << endl;
@@ -89,6 +90,7 @@ int main(){
 					cout << " Participant " << t.getItem().getFirstName()<< " " << t.getItem().getLastName() <<" "
 											<< fixed << setprecision(2) << t.getItem().getTotalMiles() << " total miles walked removed " << endl;
 					tree.erase(temp); // remove the participant from the tree
+                    for_space();
 				}
 				else {cout << first_Name << " " << last_Name << " is not a participant. " << endl;}	// if participant not in the tree
 			}
@@ -117,6 +119,7 @@ int main(){
 					tree.insert(p); // insert new people into the tree 
                     cout << first_Name << " " << last_Name << " with " << heightInInches << " added " << endl; // message to let user know participant was added 
                     cout << endl;
+                    for_space();
 				}
 			}
 			else if (option == 3){
@@ -136,33 +139,34 @@ int main(){
 
 				if (t.getItem() == temp ){
 					
-					cout << " Choose the activity from the list below: " << endl; // ask activity 
+					cout << " ***--CHOOSE THE ACTIVITY FROM THE LIST BELOW--*** " << endl; // ask activity 
 					cout << " Assembly Line = 0 " << endl;
                     cout << " Basketball (shooting baskets) = 1 " << endl;
-                    cout << "   Basketball game = 2 " << endl;
-                    cout << "   Bicycling under 10mph = 3 " << endl;
-                    cout << "   Bicycling: 4" << endl;
-                    cout << "   Cooking: 5 " << endl;
-                    cout << "   Dance: 6 " << endl;
-                    cout << "   Football: 7 " << endl;
-                    cout << "   Hiking: 8 " << endl;
-                    cout << "    House cleaning: 9 " << endl;
-                    cout << "    Gardening: 10 " << endl;
-                    cout << "    Miniature golf: 11 " << endl;
-                    cout << "    Racquetball: 12 " << endl;
-                    cout << "    Rowing: 13 " << endl;
-                    cout << "    Running 6 mph: 14 " << endl;
-                    cout << "    Running 7 mph: 15 " << endl;
-                    cout << "    Running 8 mph: 16 " << endl;
-                    cout << "    Shopping: 17 " << endl;
-                    cout << "    Soccer: 18 " << endl;
-                    cout << "    Softball: 19" << endl;
-                    cout << "    Stairs: 20 " << endl;
-                    cout << "    Swimming laps:" << endl;
-                    cout << "   Tennis: 22 " << endl;
-                    cout << "   Walking 3mph:" << endl;
-                    cout << "   Walking 4mph: " << endl;
-                    cout << "    Weight lifting: 25 " << endl;
+                    cout << " Basketball game = 2 " << endl;
+                    cout << " Bicycling under 10mph = 3 " << endl;
+                    cout << " Bicycling = 4" << endl;
+                    cout << " Cooking = 5 " << endl;
+                    cout << " Dance = 6 " << endl;
+                    cout << " Football = 7 " << endl;
+                    cout << " Hiking = 8 " << endl;
+                    cout << " House cleaning = 9 " << endl;
+                    cout << " Gardening = 10 " << endl;
+                    cout << " Miniature golf = 11 " << endl;
+                    cout << " Racquetball = 12 " << endl;
+                    cout << " Rowing = 13 " << endl;
+                    cout << " Running 6 mph = 14 " << endl;
+                    cout << " Running 7 mph = 15 " << endl;
+                    cout << " Running 8 mph = 16 " << endl;
+                    cout << " Shopping = 17 " << endl;
+                    cout << " Soccer = 18 " << endl;
+                    cout << " Softball = 19" << endl;
+                    cout << " Stairs = 20 " << endl;
+                    cout << " Swimming laps = 21" << endl;
+                    cout << " Tennis = 22 " << endl;
+                    cout << " Walking 3mph = 23 " << endl;
+                    cout << " Walking 4mph = 24 " << endl;
+                    cout << " Weight lifting = 25 " << endl;
+                    cout << " Choice: ";
                     cin >> activity_code;
 					cout << " Minutes: " ; // and minutes they did 
 					cin >> minutes;
@@ -181,8 +185,12 @@ int main(){
 					
 					cout << " Added " << first_Name << " " << last_Name << ", " << ACTIVITIES[activity_code] 
 						 << " "<< minutes << " minutes = " << fixed << setprecision(2) << a.getMiles_Equivalent()  << endl;
-				}
-				else {cout << first_Name << " " << last_Name << " is not a participant." << endl;}
+                    for_space();
+                }
+				else{
+                    cout << first_Name << " " << last_Name << " is not a participant." << endl;
+                    for_space();
+                }
 			
 			
 			}
@@ -190,18 +198,20 @@ int main(){
                 cout << " ---Calculating the total miles of everyone in the tree--- " << endl;
 				double total = tree.traverseAndCalcTotalMiles(tree.root()); // call this function to calculate the total miles of everyone in the tree 
 				cout << " Total miles walked by *everyone* = " << total << "!"  << endl;
-				cout << endl;
+				for_space();
 			}
 			else if (option == 5){
 				cout  << "\t\tTracking Result " << endl;
 				cout << setw(50) << setfill('-') << "-" << setfill(' ') << endl; 
 				tree.traverseAndPrint(tree.root(), PREORDER); // print from the tree 
-			}
+                for_space();
+            }
 			else if (option == 6){
 				cout << "Exiting and saving the contents to filename \"tracking.bin.\"" << endl;
                 ofstream outFile; // variable of the out file 
                 outFile.open("tracking.bin", ios::binary); // open the tracking.bin in binary mode again to overwrite  
                 tree.writeTree(outFile, tree.root()); // write to the file 
+                for_space();
                 return 0;
 			
 			}
