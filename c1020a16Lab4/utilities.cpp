@@ -8,6 +8,7 @@
 #include <string.h>
 #include <ctype.h>
 #include "utilities.h"
+#include <iostream>
 void to_Lower (char temp[]){
         int i;
 	for (i = 0; temp[i] != '\0' ; i++){
@@ -36,3 +37,6 @@ int checkDigit(char a[]){
 	return TRUE;
 }
 */
+void for_space(){
+        std::cout << std::endl;
+}
