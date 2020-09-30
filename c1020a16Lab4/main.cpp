@@ -4,6 +4,8 @@
  * 	Description: This application is some of the code that might go into a fitness application. 
  *  It allows the user to input an activity and the number of minutes spent on that activity then calculates the equivalent number of steps walked. 
  * 	It is the code that might be part of an app for a Fitbitâ˘, for example.
+ * 
+ * 
  */ 
 #include <iostream>
 #include <fstream>
@@ -134,8 +136,34 @@ int main(){
 
 				if (t.getItem() == temp ){
 					
-					cout << " Activity: " ; // ask activity 
-					cin >> activity_code;
+					cout << " Choose the activity from the list below: " << endl; // ask activity 
+					cout << " Assembly Line = 0 " << endl;
+                    cout << " Basketball (shooting baskets) = 1 " << endl;
+                    cout << "   Basketball game = 2 " << endl;
+                    cout << "   Bicycling under 10mph = 3 " << endl;
+                    cout << "   Bicycling: 4" << endl;
+                    cout << "   Cooking: 5 " << endl;
+                    cout << "   Dance: 6 " << endl;
+                    cout << "   Football: 7 " << endl;
+                    cout << "   Hiking: 8 " << endl;
+                    cout << "    House cleaning: 9 " << endl;
+                    cout << "    Gardening: 10 " << endl;
+                    cout << "    Miniature golf: 11 " << endl;
+                    cout << "    Racquetball: 12 " << endl;
+                    cout << "    Rowing: 13 " << endl;
+                    cout << "    Running 6 mph: 14 " << endl;
+                    cout << "    Running 7 mph: 15 " << endl;
+                    cout << "    Running 8 mph: 16 " << endl;
+                    cout << "    Shopping: 17 " << endl;
+                    cout << "    Soccer: 18 " << endl;
+                    cout << "    Softball: 19" << endl;
+                    cout << "    Stairs: 20 " << endl;
+                    cout << "    Swimming laps:" << endl;
+                    cout << "   Tennis: 22 " << endl;
+                    cout << "   Walking 3mph:" << endl;
+                    cout << "   Walking 4mph: " << endl;
+                    cout << "    Weight lifting: 25 " << endl;
+                    cin >> activity_code;
 					cout << " Minutes: " ; // and minutes they did 
 					cin >> minutes;
 					
