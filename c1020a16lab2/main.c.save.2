@@ -1,0 +1,97 @@
+/* File: main.c
+   Name: Peter Phan
+   Description:
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "athlete.h"
+#include "ultilies.h"
+#include "node.h"
+#include "list.h"
+
+void print_Medal( int gold, int silver, int bronze);
+int main (int argc, char* argv[]){
+	FILE* inFile;
+	dbl_linked_list_t list; // send list by reference everytime use 
+	node_t* nodePtr;
+	athlete_t a;
+	char fileName[MAX_CHAR];
+	int choice_number;
+	char answer[MAX_CHAR];
+	createList (&list);
+
+	if (argc == 2 ){
+		strcpy (fileName, argv[1]);
+	}
+	else {
+		printf ("Usage: lab2 filename\n");
+		return (0);
+	}
+	inFile = fopen (fileName, "rb");
+
+	if (inFile == NULL){
+		printf("Input file %s is doesn't exist. Please contact the administrator.\n", inFile);
+		return (0);
+	}	
+	else {	
+		 // if inFile != NULL
+		fread(&a, sizeof(athlete_t), 1, inFile); // inside sizeof need type
+		while ( !feof (inFile) ){
+			nodePtr = initNode(a);
+			insertNode (&list, nodePtr); 
+			fread(&a, sizeof(athlete_t), 1, inFile); 
+		}
+		// traverseStack(&list);
+		do{
+			//print_Athlete(a);
+			choice_number = printMenu (choice_number);
+			
+			if (choice_number == 1){
+				int gold = 0;
+			        int silver = 0;
+        			int bronze = 0;
+
+				printf("Country code: ");
+				scanf ("%s", answer);
+				to_Upper(answer);
+				printf ("%s Medals\n", answer);
+				int country_Code = find_Country (&list,&gold, &silver, &bronze, answer);		 
+				if (country_Code){
+					print_Medal(gold, silver, bronze);
+				}
+				else 
+					printf("There is not a match for this country code\n");
+			}
+			else if (choice_number == 2){
+				int size;
+			//		printf("Athlete: ");
+			//	scanf ("%s", answer);
+
+	
+				if (found_Athlete == FALSE){
+					printf("There is not a match for this athlete name\n");
+				}
+			}
+			else if (choice_number == 3) {
+				printf("Thank you for using the program\n");
+				return (0);
+			}
+			else 
+				printf("Invalid option: %d\n", choice_number);
+		}while (choice_number != 3);
+
+		fclose (inFile); // close the file 
+	}
+}
+void print_Medal (int gold, int silver, int bronze){
+        int i;
+        printf("Gold  Silver  Bronze\n");
+        for (i = 0; i <= 26; i++){
+                printf( "-" );   
+        }
+        printf ("\n");   
+        printf( "%4d%7d%7d\n", gold, silver, bronze);
+}
+
