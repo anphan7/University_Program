@@ -1,7 +1,7 @@
 /*
  * Name : Peter Phan
  * Due Date: 4/23/2019
- * Desription: this file perform some small task during the program 
+ * Description: this file perform some small task during the program 
  */ 
 
 #include <stdio.h>
