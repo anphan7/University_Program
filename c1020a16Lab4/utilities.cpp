@@ -24,19 +24,7 @@ void to_Upper (char temp[] ){
                 temp[i] = toupper(temp[i]);
         }
 }
-void clearBuffer (FILE* inFile){
-        while (getchar () != '\n');
-}
-/*
-int checkDigit(char a[]){
-        int i;
-	for (i = 0; a[i] = '\0'; i++){
-                if (isdigit(a[i]) == 0 )
-                        return FALSE;
-        }
-	return TRUE;
-}
-*/
+
 void for_space(){
         std::cout << std::endl;
 }

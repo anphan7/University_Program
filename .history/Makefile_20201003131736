@@ -1,0 +1,29 @@
+# Makefile for searches 
+
+# Compiler:
+CC=gcc
+
+#  compiler options
+CFLAGS=-c -Wextra
+
+all: lab4
+
+lab4: main.o activity.o binarySearchTree.o node.o participant.o position.o ultilies.o
+	$(CC) main.c athlete.c node.c list.c ultilies.o -o lab2
+    
+main: main.o activity.o binarySearchTree.o node.o participant.h position.h ultilies.h
+	$(CC) $(CFLAGS) main.c
+
+athlete: athlete.o athlete.h
+	$(CC) $(CFLAGS) athelete.c
+
+node: node.o
+	$(CC) $(CFLAGS) node.c
+
+list: list.o list.h
+	$(CC) $(CFLAGS) list.c
+ultilies: ultilies.o ultilies.h
+	$(CC) $(CFLAGS) ultilies.c
+
+clean:
+	rm -rf *.o lab2 *.gch

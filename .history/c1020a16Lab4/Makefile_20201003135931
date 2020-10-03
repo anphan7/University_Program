@@ -1,0 +1,36 @@
+# Makefile for searches 
+
+# Compiler:
+CC=g++
+
+#  compiler options
+CFLAGS= -g -Wall
+
+default: lab4
+
+lab4: main.o activity.o binarySearchTree.o node.o participant.o position.o ultilies.o
+	$(CC) $(CFLAGS) -o lab 4 main.o activity.c binarySearchTree.c node.c participant.c position.c ultilies.o
+    
+main.o: main.c activity.h binarySearchTree.h node.h participant.h position.h ultilies.h
+	$(CC) $(CFLAGS)  -c main.c
+
+activity.o: activity.c activity.h
+	$(CC) $(CFLAGS) -c activity.c
+
+binarySearchTree.o: binarySearchTree.c binarySearchTree.h
+	$(CC) $(CFLAGS) -c binarySearchTree.c
+
+node.o: node.c node.h
+	$(CC) $(CFLAGS) -c node.c
+
+participant.o: participant.c participant.h
+	$(CC) $(CFLAGS) -c participant.c
+
+position.o: position.c position.h
+	$(CC) $(CFLAGS) -c position.c
+
+ultilies.o: ultilies.c ultilies.h
+	$(CC) $(CFLAGS) -c ultilies.c
+
+clean:
+	rm -rf *.o lab4 *.gch
