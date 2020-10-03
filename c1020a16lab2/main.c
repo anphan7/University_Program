@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 #include "athlete.h"
 #include "ultilies.h"
 #include "node.h"

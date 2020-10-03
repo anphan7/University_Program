@@ -17,9 +17,11 @@ void to_Upper (char temp[] ){
                 temp[i] = toupper(temp[i]);
         }
 }
+/*
 void clearBuffer (FILE* inFile){
 	while (getchar () != '\n');
 }
+*/
 int checkDigit(char a[]){
         int i;
         for (i = 0; a[i] = '\0'; i++){

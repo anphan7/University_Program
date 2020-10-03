@@ -4,6 +4,6 @@
 #define FALSE 0
 void to_Lower (char[] );
 void to_Upper (char[] );
-void clearBuffer (FILE*);
+//void clearBuffer (FILE*);
 int checkDigit (char[]);
 #endif

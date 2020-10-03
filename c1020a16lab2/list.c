@@ -4,6 +4,7 @@
 #include "list.h"
 #include "node.h"
 #include "athlete.h"
+#include "ultilies.h"
 void createList ( dbl_linked_list_t* lPtr){
 
 	lPtr -> headPtr = NULL;
@@ -63,27 +64,7 @@ void deleteList ( dbl_linked_list_t* lPtr ){
 	lPtr -> tailPtr = NULL;
 
 }
-/*
-int find_Country(const dbl_linked_list_t* lPtr,char key_country[]){
-	node_t* curPtr;
-	int foundOne = FALSE;
-	int gold = 0;
-	int silver = 0;
-	int bronze = 0;
-	curPtr = lPtr -> headPtr;
-	while (curPtr != NULL){
-		if (strcmp (key_country, curPtr ->a.nationality ) == 0){
-			foundOne = TRUE;
-			gold += curPtr -> a.gold;	
-			silver += curPtr -> a.silver;
-			bronze += curPtr -> a.bronze;
-		}
-		curPtr = curPtr -> nextPtr;
-	}
-	print_Medal(key_country,gold,silver,bronze);
 
-}
-*/
 int find_Country(const dbl_linked_list_t* lPtr,int* gold, int* silver, int* bronze, char key_country[]){
         node_t* curPtr;
         int foundOne = FALSE;
@@ -101,7 +82,7 @@ int find_Country(const dbl_linked_list_t* lPtr,int* gold, int* silver, int* bron
 }
 
 
-int find_Athlete (const dbl_linked_list_t* lPtr, char key_name[], int size){
+void find_Athlete (const dbl_linked_list_t* lPtr, char key_name[], int size){
 	node_t* curPtr;
 	int foundOne = FALSE;
 	char temp [256];
@@ -120,36 +101,6 @@ int find_Athlete (const dbl_linked_list_t* lPtr, char key_name[], int size){
 	}
 		
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 void traverseStack (const dbl_linked_list_t* lPtr){
 	int i = 0;        

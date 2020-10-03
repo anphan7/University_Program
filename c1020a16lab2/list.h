@@ -15,6 +15,6 @@ void createList( dbl_linked_list_t* );
 void insertNode( dbl_linked_list_t*, node_t* );
 void deleteList (dbl_linked_list_t*);
 int find_Country(const dbl_linked_list_t*, int*, int*, int*,char*);
-int find_Athlete (const dbl_linked_list_t*, char*, int);
+void find_Athlete (const dbl_linked_list_t*, char*, int);
 void traverseStack (const dbl_linked_list_t*);
 #endif
