@@ -6,13 +6,13 @@
  */ 
 #include "participant.h"
 
-Participant::Participant(){
-	firstName[0] = '\0';
-	lastName[0] = '\0';
-	height = 0;
-	numberEntries = 0;
-    totalMiles = 0;
-}
+// Participant::Participant(){
+// 	firstName[0] = '\0';
+// 	lastName[0] = '\0';
+// 	height = 0;
+// 	numberEntries = 0;
+//     totalMiles = 0;
+// }
 Participant::Participant(const Participant& p){
 	strcpy (firstName, p.firstName);
 	strcpy (lastName, p.lastName);

@@ -1,7 +1,7 @@
 /*
  * Name: Peter Phan
  * File Name: participant.h
- * Description: participant.h and participant.cpp that implements a Participant class with private data and public member functions
+ * Desription: participant.h and participant.cpp that implements a Participant class with private data and public member functions
 			Last name. First name. Height in inches
 			Array of 365 Activity objects
 			Number of valid entries in array of Activity objects
@@ -39,7 +39,13 @@ const int MAX_LENGTH = 256;
 class Participant {
 public:
 
-	Participant(); // Default constructor
+	Participant(){
+		firstName[0] = '\0';
+		lastName[0] = '\0';
+		height = 0;
+		numberEntries = 0;
+		totalMiles = 0;
+	}; // Default constructor
 	Participant(const Participant&);//Copy ctor
 
 	//-----Set and Get private data functions-----

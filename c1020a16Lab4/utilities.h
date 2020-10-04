@@ -10,6 +10,7 @@
 #define FALSE 0
 void to_Lower (char[] );
 void to_Upper (char[] );
+void clearBuffer (FILE*);
 int checkDigit (char[]);
 void for_space();
 #endif

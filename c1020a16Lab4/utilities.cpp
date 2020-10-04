@@ -1,7 +1,7 @@
 /*
  * Name : Peter Phan
  * Due Date: 4/23/2019
- * Description: this file perform some small task during the program 
+ * Desription: this file perform some small task during the program 
  */ 
 
 #include <stdio.h>
@@ -24,7 +24,19 @@ void to_Upper (char temp[] ){
                 temp[i] = toupper(temp[i]);
         }
 }
-
+void clearBuffer (FILE* inFile){
+        while (getchar () != '\n');
+}
+/*
+int checkDigit(char a[]){
+        int i;
+	for (i = 0; a[i] = '\0'; i++){
+                if (isdigit(a[i]) == 0 )
+                        return FALSE;
+        }
+	return TRUE;
+}
+*/
 void for_space(){
         std::cout << std::endl;
 }
