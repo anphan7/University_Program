@@ -46,7 +46,7 @@ public:
 		numberEntries = 0;
 		totalMiles = 0;
 	}; // Default constructor
-	Participant(const Participant&);//Copy ctor
+	Participant(const Participant&){};//Copy ctor
 
 	//-----Set and Get private data functions-----
 	void setFirstName(const char* f_name ){ strcpy (firstName, f_name);}
@@ -58,23 +58,23 @@ public:
 	void setHeight(double h) { height = h;}
 	double getHeight() const {return height;}
 	
-	void setActivity(Activity);
+	void setActivity(Activity){};
 	Activity getActivity(int i) const { return activity[i]; }
 	
 	void setNumber_Entries(int number) { numberEntries = number;}
 	int getNumber_Entries() const {return numberEntries;}
 	
-	void setTotalMiles();
+	void setTotalMiles(){};
 	double getTotalMiles() const {return totalMiles;}
 	 
 	//-----Overload Operator Functions-----
-	friend bool operator< (const Participant&, const Participant&); //Overloaded operator< that compares the first name concatenated to the last name of two participants
-	friend bool operator== (const Participant&, const Participant&); // Overloaded operator== that compares the first name concatenated to the last name of two participants
-	friend ostream& operator<<(ostream&, const Participant&); // Ovverloaded operator<< that print out 
-	Participant operator=( const Participant& p );
+	friend bool operator< (const Participant&, const Participant&){return 0;}; //Overloaded operator< that compares the first name concatenated to the last name of two participants
+	friend bool operator== (const Participant&, const Participant&){return 0;}; // Overloaded operator== that compares the first name concatenated to the last name of two participants
+	friend ostream& operator<<(ostream& out, const Participant&){return out;}; // Overloaded operator<< that print out 
+	Participant operator=( const Participant& ){return *this;};
 
 	//-----Additional Functions-----
-	void write(ostream&);
+	void write(ostream&){};
 	
 
 private:

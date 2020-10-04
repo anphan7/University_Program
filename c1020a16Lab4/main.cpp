@@ -33,7 +33,6 @@ int main(){
     char c;
 	Participant temp;
 	Activity a;
-    cout << " Hello " << endl;
 	inFile.open("tracking.bin", ios::binary); // open the file named "tracking.bin" in binary mode
     if (inFile.fail()){ // if the file can't open because there are no file 
         cout << "---THE BINARY INPUT FILE DOES NOT EXIST. CREATING AN EMPTY TREE--- " << endl;
