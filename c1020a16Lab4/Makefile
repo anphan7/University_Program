@@ -28,4 +28,4 @@ ultilies.o: utilities.cpp
 	$(CC) $(CFLAGS) utilities.cpp
 
 clean:
-	rm -rf *o lab4
+	rm -rf *.o *.gch *.exe lab4
