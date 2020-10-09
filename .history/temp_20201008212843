@@ -1,0 +1,32 @@
+@@ -0,0 +1,31 @@
+CC=g++
+
+CFLAGS= -g -Wall
+all: lab4
+
+lab4: main.o activity.o binarySearchTree.o node.o participant.o position.o utilities.o
+	$(CC) main.o activity.o binarySearchTree.o node.o participant.o position.o utilities.o -o lab4
+ 
+main.o: main.cpp activity.h binarySearchTree.h node.h participant.h position.h
+	$(CC) $(CFLAGS) -c main.cpp
+
+activity.o: activity.h	
+	$(CC) $(CFLAGS) -c activity.h
+
+binarySearchTree.o: binarySearchTree.h
+	$(CC) $(CFLAGS) -c binarySearchTree.h
+
+node.o: node.h
+	$(CC) $(CFLAGS) -c node.h
+
+participant.o: participant.cpp participant.h
+	$(CC) $(CFLAGS) -c participant.cpp
+
+position.o: position.h
+	$(CC) $(CFLAGS) -c position.h
+
+ultilies.o: utilities.cpp ultilies.h
+	$(CC) $(CFLAGS) -c utilities.cpp
+
+clean:
+	$(RM) lab4 *.o *~
