@@ -75,7 +75,7 @@ public:
 
 	//-----Additional Functions-----
 	void write(ostream&){};
-
+	
 
 private:
 	char firstName[MAX_LENGTH]; // first name of participant 

@@ -75,6 +75,7 @@ public:
 
 	//-----Additional Functions-----
 	void write(ostream&){};
+	Participant& readFile (string){return 0;};
 
 
 private:
