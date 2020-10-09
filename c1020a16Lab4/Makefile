@@ -1,12 +1,15 @@
+# Makefile for searches 
+
+# Compiler:
 CC=g++
 
-CFLAGS= -c -Wall
+CFLAGS= -c -Wextra
 all: lab4
 
 lab4: main.o activity.o binarySearchTree.o node.o participant.o position.o utilities.o
 	$(CC) main.cpp activity.h binarySearchTree.h node.h participant.h position.h utilities.h -o lab4
  
-main.o: main.cpp activity.h binarySearchTree.h node.h participant.h position.h
+main.o: main.cpp activity.h binarySearchTree.h node.h participant.h position.h utilities.h
 	$(CC) $(CFLAGS) main.cpp
 
 activity.o: activity.h	
@@ -28,4 +31,4 @@ utilities.o: utilities.h
 	$(CC) $(CFLAGS) utilities.h
 
 clean:
-	$(RM) lab4 *.o *.gch *~
+	$(RM) lab4 *.o *.gch *.exe *~

@@ -22,8 +22,10 @@ node: node.o
 
 list: list.o list.h
 	$(CC) $(CFLAGS) list.c
+	
 ultilies: ultilies.o ultilies.h
 	$(CC) $(CFLAGS) ultilies.c
 
 clean:
-	rm -rf *.o lab2 *.gch
+	rm -rf *.o lab2 *.gch *.exe
+
