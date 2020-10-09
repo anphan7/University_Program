@@ -4,7 +4,7 @@ CFLAGS= -c -Wall
 all: lab4
 
 lab4: main.o activity.o binarySearchTree.o node.o participant.o position.o utilities.o
-	$(CC) main.cpp activity.h binarySearchTree.h node.h participant.h position.h utilities.o -o lab4
+	$(CC) main.cpp activity.h binarySearchTree.h node.h participant.h position.h utilities.h -o lab4
  
 main.o: main.cpp activity.h binarySearchTree.h node.h participant.h position.h
 	$(CC) $(CFLAGS) main.cpp
@@ -18,14 +18,14 @@ binarySearchTree.o: binarySearchTree.h
 node.o: node.h
 	$(CC) $(CFLAGS) node.h
 
-participant.o: participant.cpp
-	$(CC) $(CFLAGS) participant.cpp
+participant.o: participant.h
+	$(CC) $(CFLAGS) participant.h
 
 position.o: position.h
 	$(CC) $(CFLAGS) position.h
 
-ultilies.o: utilities.cpp
-	$(CC) $(CFLAGS) utilities.cpp
+utilities.o: utilities.h
+	$(CC) $(CFLAGS) utilities.h
 
 clean:
-	$(RM) lab4 *.o *~
+	$(RM) lab4 *.o *.gch *~
