@@ -200,8 +200,8 @@ int main(){
 			else if (option == 6){
 				cout << "Exiting and saving the contents to filename \"tracking.bin.\"" << endl;
                 ofstream outFile; // variable of the out file 
-                //outFile.open("tracking.bin", ios::binary); // open the tracking.bin in binary mode again to overwrite  
-                //tree.writeTree(outFile, tree.root()); // write to the file 
+                outFile.open("tracking.bin", ios::binary); // open the tracking.bin in binary mode again to overwrite  
+                tree.writeTree(outFile, tree.root()); // write to the file 
                 return 0;
 			
 			}

@@ -21,7 +21,7 @@ const int MAX_LENGTH = 256;
 class Participant {
 public:
 
-	Participant(){}; // Default constructor
+	Participant(); // Default constructor
 	Participant(const Participant&);//Copy ctor
 
 	//-----Set and Get private data functions-----
@@ -44,10 +44,10 @@ public:
 	friend bool operator< (const Participant&, const Participant&); //Overloaded operator< that compares the first name concatenated to the last name of two participants
 	friend bool operator== (const Participant&, const Participant&); // Overloaded operator== that compares the first name concatenated to the last name of two participants
 	friend istream& operator>> ( istream&, Participant& );
-    friend ostream& operator<<(ostream& out, const Participant&){return out;}; // Overloaded operator<< that print out 
+    friend ostream& operator<<(ostream& out, const Participant&); // Overloaded operator<< that print out 
 
 	//-----Additional Functions-----
-	Participant& readFile (string){return *this;};
+	Participant& readFile (string);
 	void setTotalMiles();
 	double getTotalMiles() const {return totalMiles;}
 
