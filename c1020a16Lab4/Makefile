@@ -30,5 +30,6 @@ position.o: position.h
 utilities.o: utilities.h
 	$(CC) $(CFLAGS) utilities.h
 
+
 clean:
 	$(RM) lab4 *.o *.gch *.exe *~

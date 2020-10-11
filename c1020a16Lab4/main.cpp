@@ -4,8 +4,6 @@
  * 	Description: This application is some of the code that might go into a fitness application. 
  *  It allows the user to input an activity and the number of minutes spent on that activity then calculates the equivalent number of steps walked. 
  * 	It is the code that might be part of an app for a Fitbitâ˘, for example.
- * 
- * 
  */ 
 #include <iostream>
 #include <fstream>
@@ -33,10 +31,8 @@ int main(){
     char c;
 	Participant temp;
 	Activity a;
-	//inFile.open("tracking.bin", ios::binary); // open the file named "tracking.bin" in binary mode
-    	inFile.open("tracking.bin", ios::binary); // open the file named "tracking.bin" in binary mode
-
-	if (inFile.fail()){ // if the file can't open because there are no file 
+	inFile.open("tracking.bin", ios::binary); // open the file named "tracking.bin" in binary mode
+    if (inFile.fail()){ // if the file can't open because there are no file 
         cout << "---THE BINARY INPUT FILE DOES NOT EXIST. CREATING AN EMPTY TREE--- " << endl;
         cout << endl;
     }
@@ -51,8 +47,8 @@ int main(){
     while (inFile.read ((char*)&p, sizeof (Participant))){ // read in whatever the file have 
         p.setTotalMiles(); // set the total miles for future use
         tree.insert(p); // insert everybody to the tree until it end of file 
-		cout << p << endl;
-	}
+        //cout << p << endl;
+    }
     inFile.close(); // close the file after use 
 	//tree.traverseAndPrint(tree.root(), PREORDER); // test 
 	
@@ -92,7 +88,6 @@ int main(){
 					cout << " Participant " << t.getItem().getFirstName()<< " " << t.getItem().getLastName() <<" "
 											<< fixed << setprecision(2) << t.getItem().getTotalMiles() << " total miles walked removed " << endl;
 					tree.erase(temp); // remove the participant from the tree
-                    for_space();
 				}
 				else {cout << first_Name << " " << last_Name << " is not a participant. " << endl;}	// if participant not in the tree
 			}
@@ -121,7 +116,6 @@ int main(){
 					tree.insert(p); // insert new people into the tree 
                     cout << first_Name << " " << last_Name << " with " << heightInInches << " added " << endl; // message to let user know participant was added 
                     cout << endl;
-                    for_space();
 				}
 			}
 			else if (option == 3){
@@ -187,12 +181,8 @@ int main(){
 					
 					cout << " Added " << first_Name << " " << last_Name << ", " << ACTIVITIES[activity_code] 
 						 << " "<< minutes << " minutes = " << fixed << setprecision(2) << a.getMiles_Equivalent()  << endl;
-                    for_space();
-                }
-				else{
-                    cout << first_Name << " " << last_Name << " is not a participant." << endl;
-                    for_space();
-                }
+				}
+				else {cout << first_Name << " " << last_Name << " is not a participant." << endl;}
 			
 			
 			}
@@ -200,20 +190,18 @@ int main(){
                 cout << " ---Calculating the total miles of everyone in the tree--- " << endl;
 				double total = tree.traverseAndCalcTotalMiles(tree.root()); // call this function to calculate the total miles of everyone in the tree 
 				cout << " Total miles walked by *everyone* = " << total << "!"  << endl;
-				for_space();
+				cout << endl;
 			}
 			else if (option == 5){
 				cout  << "\t\tTracking Result " << endl;
 				cout << setw(50) << setfill('-') << "-" << setfill(' ') << endl; 
 				tree.traverseAndPrint(tree.root(), PREORDER); // print from the tree 
-                for_space();
-            }
+			}
 			else if (option == 6){
 				cout << "Exiting and saving the contents to filename \"tracking.bin.\"" << endl;
                 ofstream outFile; // variable of the out file 
-                //outFile.open("tracking.bin", ios::binary); // open the tracking.bin in binary mode again to overwrite  
-                //tree.writeTree(outFile, tree.root()); // write to the file 
-                for_space();
+                outFile.open("tracking.bin", ios::binary); // open the tracking.bin in binary mode again to overwrite  
+                tree.writeTree(outFile, tree.root()); // write to the file 
                 return 0;
 			
 			}
