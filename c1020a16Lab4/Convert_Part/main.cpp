@@ -25,8 +25,7 @@ int main(){
 		inBin.read ((char*) &p, sizeof (Participant));
 		cout << line << endl;
 	}	
-	cout << p << endl;
-
+		cout << " kfkfj" << endl;
 
 	inFile.close();
 	inBin.close();

@@ -45,14 +45,8 @@ public:
 		height = 0;
 		numberEntries = 0;
 		totalMiles = 0;
-	} // Default constructor
-	Participant(const Participant& p){
-		strcpy (firstName, p.firstName);
-		strcpy (lastName, p.lastName);
-		height = p.height;
-		numberEntries = p.numberEntries;
-		totalMiles = p.totalMiles;
-	}//Copy ctor
+	}; // Default constructor
+	Participant(const Participant&);//Copy ctor
 
 	//-----Set and Get private data functions-----
 	void setFirstName(const char* f_name ){ strcpy (firstName, f_name);}
@@ -64,73 +58,23 @@ public:
 	void setHeight(double h) { height = h;}
 	double getHeight() const {return height;}
 	
-	void setActivity(Activity a){
-		activity[numberEntries] = a;
-		numberEntries++;
-	}
+	void setActivity(Activity);
 	Activity getActivity(int i) const { return activity[i]; }
 	
 	void setNumber_Entries(int number) { numberEntries = number;}
 	int getNumber_Entries() const {return numberEntries;}
 	
-	void setTotalMiles(){
-		totalMiles = 0;
-		for (int i = 0; i < numberEntries; i++){
-				totalMiles += activity[i].getMiles_Equivalent();
-		}	
-	}
+	void setTotalMiles();
 	double getTotalMiles() const {return totalMiles;}
 	 
 	//-----Overload Operator Functions-----
-	friend bool operator< (const Participant& p1, const Participant& p2){
-		char p1Name[MAX_LENGTH];       // temp variable of p1
-		strcpy (p1Name, p1.lastName); // copy the p1 first name to variable p1Name. Ex: now p1Name = 'Peter';
-		strcat (p1Name, p1.firstName);  // concatenate p1 last name to p1Name. Ex: now p1Name = 'Peter Phan';
-		char p2Name[MAX_LENGTH];		// temp variable of p2
-		strcpy (p2Name, p2.lastName); // copy the p1 first name to variable p2Name. Ex: now p2Name = 'Vy';
-		strcat (p2Name, p2.firstName);  // concatenate p1 last name to p2Name. Ex: now p2Name = 'Vy Nguyen';
-	
-		if (strcmp (p1Name, p2Name) < 0) {return true;} // compare the 2 name. Return true if p1 < p2
-		else {return false;} 							  // else return false		
-	} //Overloaded operator< that compares the first name concatenated to the last name of two participants
-	
-	friend bool operator== (const Participant& p1, const Participant& p2){
-		char p1Name[MAX_LENGTH];       // temp variable of p1
-		strcpy (p1Name, p1.lastName); // copy the p1 first name to variable p1Name. Ex: now p1Name = 'Peter';
-		strcat (p1Name, p1.firstName);  // concatenate p1 last name to p1Name. Ex: now p1Name = 'Peter Phan';
-		char p2Name[MAX_LENGTH];		// temp variable of p2
-		strcpy (p2Name, p2.lastName); // copy the p1 first name to variable p2Name. Ex: now p2Name = 'Vy';
-		strcat (p2Name, p2.firstName);  // concatenate p1 last name to p2Name. Ex: now p2Name = 'Vy Nguyen';
-		
-		if (strcmp (p1Name, p2Name) == 0) {return true;} // compare the 2 name. Return true if p1 = p2
-		else {return false;} 							  // else return false		
-	} // Overloaded operator== that compares the first name concatenated to the last name of two participants
-	
-	friend ostream& operator<<(ostream& outFile, const Participant& p){
-		outFile <<  setw(15) << left << p.firstName;
-		outFile << setw (16) << left << p.lastName;
-		outFile << setw (12) << right << fixed << setprecision(2) << p.totalMiles;
-		cout << endl;
-
-		return outFile;
-	} // Ovverloaded operator<< that print out 
-	Participant operator=( const Participant& p ){
-		if(this != &p){
-			strcpy(firstName, p.firstName);
-			strcpy(lastName, p.lastName);
-			height = p.height;
-			totalMiles = p.totalMiles;
-			numberEntries = p.numberEntries;
-			for(int i = 0; i < p.numberEntries; i++){
-				activity[i] = p.getActivity(i);
-			}
-    	}
-    return *this;
-	}
+	friend bool operator< (const Participant&, const Participant&); //Overloaded operator< that compares the first name concatenated to the last name of two participants
+	friend bool operator== (const Participant&, const Participant&); // Overloaded operator== that compares the first name concatenated to the last name of two participants
+	friend ostream& operator<<(ostream&, const Participant&); // Overloaded operator<< that print out 
+	Participant operator=( const Participant& );
 
 	//-----Additional Functions-----
-	//void write(ostream&);
-	void write(ostream& out){ out.write((char*)this, sizeof(Participant));}
+	void write(ostream&);
 
 
 private:

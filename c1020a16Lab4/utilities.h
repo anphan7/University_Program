@@ -8,20 +8,7 @@
 #define ULTILIES_H
 #define TRUE 1
 #define FALSE 0
-#include <stdio.h>
-#include <string.h>
-#include <ctype.h>
-void to_Lower (char temp[] ){
-   int i;
-	for (i = 0; temp[i] != '\0' ; i++){
-                temp[i] = tolower(temp[i]);
-        } 
-}
-void to_Upper (char temp[] ){
-        int i;
-	for (i = 0; temp[i] != '\0' ; i++){
-                temp[i] = toupper(temp[i]);
-        }
-}
-
+void to_Lower (char[] );
+void to_Upper (char[] );
+void for_space();
 #endif
