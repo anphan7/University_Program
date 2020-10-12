@@ -1,15 +1,19 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "grocery_item.h"
 
 int main(){
     std::ifstream inFile, inBin;
     std::ofstream outFile;
     std::string line;
+    grocery_item_t g;
     inFile.open("inventory.txt", std::ios::in);
     outFile.open("grocery.bin", std::ios::binary);
     while (getline (inFile, line, '\n')){
-        outFile.write()
+        outFile.write((char*)&g, sizeof (grocery_item_t)); // write to grocery.bin 
+        inBin.read((char*)&g, sizeof (grocery_item_t));
+        std::cout << line << std::endl; // cout information from file
     }
     inFile.close();
     outFile.close();
