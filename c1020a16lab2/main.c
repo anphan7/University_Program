@@ -15,7 +15,6 @@
 #include "ultilies.h"
 #include "node.h"
 #include "list.h"
-
 void print_Medal (int gold, int silver, int bronze);
 int main (int argc, char* argv[]){
 	FILE* inFile;
