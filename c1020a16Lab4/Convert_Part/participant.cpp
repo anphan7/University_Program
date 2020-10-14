@@ -41,7 +41,7 @@ ostream& operator<< (ostream& outFile, const Participant& p){
 		
 		return outFile;
 	}
-	Participant& Participant::readFile(string line){
+Participant& Participant::readFile(string line){
 		string token;
 		Activity a;
 	bool fn = true;

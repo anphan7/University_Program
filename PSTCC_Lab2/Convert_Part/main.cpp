@@ -12,10 +12,11 @@ int main(){
     outFile.open("grocery.bin", std::ios::out | std::ios::binary);
     while (getline (inFile, line, '\n')){
 
-        //g.setNumber_Entries(0);
+        g.setNumber_Entries(0);
         g.readFile(line);    
         outFile.write((char*)&g, sizeof (Grocery)); // write to grocery.bin 
         inBin.read((char*)&g, sizeof (Grocery));
+        std::cout  << g << std::endl;
         //std::cout << line << std::endl; // cout information from file
 
     }

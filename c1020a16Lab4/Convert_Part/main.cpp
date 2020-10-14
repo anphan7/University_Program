@@ -1,4 +1,4 @@
-#include <iostream>
+ #include <iostream>
 #include <fstream>
 #include <cstring>
 #include <cmath>
@@ -24,6 +24,7 @@ int main(){
 		outFile.write ((char* )&p, sizeof (Participant) );
 		inBin.read ((char*) &p, sizeof (Participant));
 		//cout << line << endl;
+		
 	}	
 
 	inFile.close();

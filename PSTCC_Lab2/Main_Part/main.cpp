@@ -34,7 +34,7 @@ int main(){
             nodePtr = initialize_a_Node(g);
             insertNode (&list, nodePtr);
             inFile.read((char*)& g, sizeof (grocery_item_t));
-            //std::cout << g << std::endl; 
+            std::cout << g << std::endl; 
            print_prompt(g); // print out garbage 
             //std::cout << g.barcode << std::endl;
         }

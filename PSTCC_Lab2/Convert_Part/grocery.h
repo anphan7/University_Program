@@ -5,6 +5,7 @@
 #include <iostream>
 #define MAX_LENGTH 365
 #include "date.h"
+using std::ostream;
 
 
 class Grocery {  
@@ -28,11 +29,10 @@ public:
     void setNumber_Entries(int number) { numberEntries = number;}
 	int getNumber_Entries() const {return numberEntries;}
 
+    friend ostream& operator<<(ostream&, const Grocery&); // Overloaded operator<< that print out 
+
    //--Additional functions--
    	Grocery& readFile (std::string);
-
-
-
 
 private: 
     char barcode[15];
