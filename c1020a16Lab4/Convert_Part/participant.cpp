@@ -38,12 +38,12 @@ ostream& operator<< (ostream& outFile, const Participant& p){
 		outFile << p.activity[i].getMinutes_Done() << " ";
         //outFile << p.activity[i].getMiles_Equivalent() << " ";
 	}
-	
-    return outFile;
-}
-Participant& Participant::readFile(string line){
-	string token;
-	Activity a;
+		
+		return outFile;
+	}
+	Participant& Participant::readFile(string line){
+		string token;
+		Activity a;
 	bool fn = true;
 	bool ln = false;
 	bool h = false; // height

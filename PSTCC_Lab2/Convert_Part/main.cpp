@@ -13,7 +13,7 @@ int main(){
     while (getline (inFile, line, '\n')){
          std::cout << line << std::endl; // cout information from file
         outFile.write((char*)&g, sizeof (grocery_item_t)); // write to grocery.bin 
-        inBin.read((char*)&g, sizeof (grocery_item_t));
+        //inBin.read((char*)&g, sizeof (grocery_item_t));
     }
     inFile.close();
     outFile.close();

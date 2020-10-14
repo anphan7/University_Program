@@ -6,14 +6,17 @@ CC=g++
 CFLAGS= -c -Wextra
 all: lab2
 
-lab2: main.o grocery_item.o 		
-	$(CC) main.cpp grocery_item.h -o lab2
+lab2: main.o grocery.o date.o		
+	$(CC) main.cpp grocery.h grocery.cpp date.h date.cpp -o lab2
  
-main.o: main.cpp grocery_item.h 
+main.o: main.cpp grocery.h 
 	$(CC) $(CFLAGS) main.cpp
 
-grocery_item.o: grocery_item.h
-	$(CC) $(CFLAGS) grocery_item.h
+date.o: date.h
+	$(CC) $(CFLAGS) date.h
+
+grocery.o: grocery.h
+	$(CC) $(CFLAGS) grocery.h
 
 clean:
 	$(RM) lab2 *.o *.gch *.exe *.bin *~

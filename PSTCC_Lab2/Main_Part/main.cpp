@@ -29,14 +29,14 @@ int main(){
         for_space();
     }
     createList(&list);
-    inFile.read ((char*)&g, sizeof (grocery_item_t)); // read in whatever the file have 
-        while (!inFile.eof()){
+        // read in whatever the file have 
+        while ( inFile.read ((char*)&g, sizeof (grocery_item_t))){
             nodePtr = initialize_a_Node(g);
             insertNode (&list, nodePtr);
-            inFile.read((char*)& g, sizeof (grocery_item_t));
-
-           // std::cout << g << std::endl; 
-            print_prompt(g); // print out garbage 
+            //inFile.read((char*)& g, sizeof (grocery_item_t));
+            //std::cout << g << std::endl; 
+           print_prompt(g); // print out garbage 
+            //std::cout << g.barcode << std::endl;
         }
     inFile.close(); 
 
