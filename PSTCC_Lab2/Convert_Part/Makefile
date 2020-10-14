@@ -7,7 +7,7 @@ CFLAGS= -c -Wextra
 all: lab2
 
 lab2: main.o grocery.o date.o		
-	$(CC) main.cpp grocery.h grocery.cpp date.h date.cpp -o lab2
+	$(CC) main.cpp grocery.h grocery.cpp date.h -o lab2
  
 main.o: main.cpp grocery.h 
 	$(CC) $(CFLAGS) main.cpp
